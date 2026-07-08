@@ -146,8 +146,7 @@ export function Header() {
                   )}
                 </Link>
               ))}
-            <UserMenu />
-      </nav>
+            </nav>
 
             {/* Actions */}
             <div className="flex items-center gap-2">
