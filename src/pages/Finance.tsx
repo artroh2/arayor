@@ -7,15 +7,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 
+// Bank logos served via Clearbit's public logo CDN (no auth required)
 const bankLogos: Record<string, string> = {
-  "Halkbank": "",
-  "Ziraat Bankası": "",
-  "İş Bankası": "",
-  "Akbank": "",
-  "Garanti BBVA": "",
-  "Yapı Kredi": "",
-  "QNB Finansbank": "",
-  "Denizbank": "",
+  "Halkbank": "https://logo.clearbit.com/halkbank.com.tr",
+  "Ziraat Bankası": "https://logo.clearbit.com/ziraatbank.com.tr",
+  "İş Bankası": "https://logo.clearbit.com/isbank.com.tr",
+  "Akbank": "https://logo.clearbit.com/akbank.com",
+  "Garanti BBVA": "https://logo.clearbit.com/garantibbva.com.tr",
+  "Yapı Kredi": "https://logo.clearbit.com/yapikredi.com.tr",
+  "QNB Finansbank": "https://logo.clearbit.com/qnb.com.tr",
+  "Denizbank": "https://logo.clearbit.com/denizbank.com",
 };
 import {
   Select,

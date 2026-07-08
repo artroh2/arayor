@@ -23,6 +23,7 @@ import NewModels from "./pages/NewModels";
 import NotFound from "./pages/NotFound";
 import Pricing from "./pages/Pricing";
 import Finance from "./pages/Finance";
+import Insurance from "./pages/Insurance";
 import AdminImageApproval from "./pages/AdminImageApproval";
 import AIValuation from "./pages/AIValuation";
 import AIVehicleDossier from "./pages/AIVehicleDossier";
@@ -55,6 +56,7 @@ const App = () => (
               <Route path="/profil" element={<Profile />} />
               <Route path="/premium" element={<Pricing />} />
               <Route path="/finans" element={<Finance />} />
+              <Route path="/sigorta" element={<Insurance />} />
               <Route path="/en-populer" element={<MostPopular />} />
               <Route path="/yeni-modeller" element={<NewModels />} />
               <Route path="/admin/fotograf-onay" element={<AdminImageApproval />} />

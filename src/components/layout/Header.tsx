@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserMenu } from "@/components/UserMenu";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Search, User, LogOut, Users, UserCircle, Crown, Landmark, Star, Sparkles } from "lucide-react";
+import { Menu, X, Search, User, LogOut, Users, UserCircle, Crown, Landmark, Star, Sparkles, Shield } from "lucide-react";
 import { ArayorLogo } from "@/components/brand/ArayorLogo";
 import { Button } from "@/components/ui/button";
 import {
@@ -33,6 +33,7 @@ const getNavLinks = (t: (key: string) => string) => [
   { href: "/karsilastir", label: t("nav.compare") },
   { href: "/komunite", label: t("nav.communities") },
   { href: "/finans", label: t("nav.finance") || "Finans", icon: Landmark, hasBadge: true },
+  { href: "/sigorta", label: "Sigorta", icon: Shield, hasBadge: true },
   { href: "/degerleme", label: "AI Değerleme", icon: Sparkles, hasBadge: true },
   { href: "/bayi", label: "Bayi Pro", icon: Landmark, hasBadge: true },
   { href: "/kurumsal", label: "Kurumsal" },
