@@ -275,13 +275,23 @@ const Insurance = () => {
                 {insurers.map((ins) => (
                   <Card key={ins.domain} className="hover:shadow-lg transition-all">
                     <CardContent className="p-5 flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-xl bg-white border border-border flex items-center justify-center p-2 shrink-0">
+                      <div className="w-16 h-16 rounded-xl bg-white border border-border flex items-center justify-center p-2 shrink-0 overflow-hidden">
                         <img
                           src={`https://logo.clearbit.com/${ins.domain}`}
                           alt={ins.name}
                           className="w-full h-full object-contain"
                           onError={(e) => {
-                            (e.currentTarget as HTMLImageElement).style.display = "none";
+                            const el = e.currentTarget as HTMLImageElement;
+                            const initials = ins.name
+                              .split(" ")
+                              .map((w) => w[0])
+                              .join("")
+                              .slice(0, 3)
+                              .toUpperCase();
+                            el.onerror = null;
+                            el.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                              initials
+                            )}&background=0f172a&color=06b6d4&bold=true&size=128&format=png`;
                           }}
                         />
                       </div>
