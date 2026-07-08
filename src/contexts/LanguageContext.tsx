@@ -947,7 +947,7 @@ const esTranslations: Record<string, string> = {
 // Use Turkish as base for other languages (fallback)
 const createTranslations = (overrides: Partial<Record<string, string>>): Record<string, string> => ({
   ...trTranslations,
-  ...overrides,
+  ...(overrides as Record<string, string>),
 });
 
 function getTranslations(lang: LanguageCode): Record<string, string> {
