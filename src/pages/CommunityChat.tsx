@@ -221,11 +221,16 @@ const CommunityChat = () => {
         return;
       }
 
-      const { data: urlData } = supabase.storage
+      const { data: signed, error: signErr } = await supabase.storage
         .from("community-images")
-        .getPublicUrl(uploadData.path);
-      
-      imageUrl = urlData.publicUrl;
+        .createSignedUrl(uploadData.path, 60 * 60 * 24 * 365);
+
+      if (signErr || !signed) {
+        toast({ title: "Hata", description: "Resim bağlantısı oluşturulamadı.", variant: "destructive" });
+        setSending(false);
+        return;
+      }
+      imageUrl = signed.signedUrl;
     }
 
     const { error } = await supabase
