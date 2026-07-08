@@ -89,9 +89,18 @@ function QuoteFormCard({ type }: { type: QuoteType }) {
     setLoading(true);
     try {
       const { data: userData } = await supabase.auth.getUser();
+      if (!userData.user?.id) {
+        toast({
+          title: "Giriş gerekli",
+          description: "Teklif göndermek için lütfen giriş yapın.",
+          variant: "destructive",
+        });
+        setLoading(false);
+        return;
+      }
       const payload = {
         quote_type: type,
-        user_id: userData.user?.id ?? null,
+        user_id: userData.user.id,
         full_name: form.full_name.trim(),
         phone: form.phone.trim(),
         email: form.email.trim() || null,
