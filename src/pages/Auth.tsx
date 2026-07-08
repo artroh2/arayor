@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArayorLogo } from "@/components/brand/ArayorLogo";
 
@@ -143,21 +144,27 @@ const Auth = () => {
 
   const handleGoogleAuth = async () => {
     setGoogleLoading(true);
-    
+
     try {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: `${window.location.origin}/`,
-        },
+      const result = await lovable.auth.signInWithOAuth("google", {
+        redirect_uri: window.location.origin,
       });
 
-      if (error) throw error;
+      if (result.error) {
+        throw result.error instanceof Error ? result.error : new Error(String(result.error));
+      }
+
+      if (result.redirected) {
+        return;
+      }
+
+      // Session already set — navigate home
+      navigate("/");
     } catch (error: any) {
       console.error("Google auth error:", error);
       toast({
         title: t("common.error"),
-        description: "Could not sign in with Google. Please try again.",
+        description: "Google ile giriş yapılamadı. Lütfen tekrar deneyin.",
         variant: "destructive",
       });
       setGoogleLoading(false);

@@ -1,11 +1,11 @@
-// Bank logo paths — resolved at runtime
+// Bank logos served via Clearbit's public logo CDN
 export const bankLogos: Record<string, string> = {
-  "Halkbank": "/banks/halkbank.png",
-  "Ziraat Bankası": "/banks/ziraat.png",
-  "İş Bankası": "/banks/isbank.png",
-  "Akbank": "/banks/akbank.png",
-  "Garanti BBVA": "/banks/garanti.png",
-  "Yapı Kredi": "/banks/yapikredi.png",
-  "QNB Finansbank": "/banks/qnb.png",
-  "Denizbank": "/banks/denizbank.png",
+  "Halkbank": "https://logo.clearbit.com/halkbank.com.tr",
+  "Ziraat Bankası": "https://logo.clearbit.com/ziraatbank.com.tr",
+  "İş Bankası": "https://logo.clearbit.com/isbank.com.tr",
+  "Akbank": "https://logo.clearbit.com/akbank.com",
+  "Garanti BBVA": "https://logo.clearbit.com/garantibbva.com.tr",
+  "Yapı Kredi": "https://logo.clearbit.com/yapikredi.com.tr",
+  "QNB Finansbank": "https://logo.clearbit.com/qnb.com.tr",
+  "Denizbank": "https://logo.clearbit.com/denizbank.com",
 };
