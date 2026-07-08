@@ -132,6 +132,66 @@ export type Database = {
           },
         ]
       }
+      insurance_quotes: {
+        Row: {
+          brand: string | null
+          city: string | null
+          created_at: string
+          email: string | null
+          fuel_type: string | null
+          full_name: string
+          id: string
+          model: string | null
+          notes: string | null
+          phone: string
+          plate: string | null
+          quote_type: string
+          status: string
+          updated_at: string
+          usage_type: string | null
+          user_id: string | null
+          year: number | null
+        }
+        Insert: {
+          brand?: string | null
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          fuel_type?: string | null
+          full_name: string
+          id?: string
+          model?: string | null
+          notes?: string | null
+          phone: string
+          plate?: string | null
+          quote_type: string
+          status?: string
+          updated_at?: string
+          usage_type?: string | null
+          user_id?: string | null
+          year?: number | null
+        }
+        Update: {
+          brand?: string | null
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          fuel_type?: string | null
+          full_name?: string
+          id?: string
+          model?: string | null
+          notes?: string | null
+          phone?: string
+          plate?: string | null
+          quote_type?: string
+          status?: string
+          updated_at?: string
+          usage_type?: string | null
+          user_id?: string | null
+          year?: number | null
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           email: string
