@@ -30,6 +30,7 @@ import AIVehicleDossier from "./pages/AIVehicleDossier";
 import CommandCenter from "./pages/CommandCenter";
 import DealershipDashboard from "./pages/DealershipDashboard";
 import Kurumsal from "./pages/Kurumsal";
+import UserAgreement from "./pages/UserAgreement";
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,10 @@ const App = () => (
               <Route path="/komut-merkezi" element={<CommandCenter />} />
               <Route path="/bayi" element={<DealershipDashboard />} />
               <Route path="/kurumsal" element={<Kurumsal />} />
+              <Route path="/sozlesme" element={<UserAgreement />} />
+              <Route path="/kullanici-sozlesmesi" element={<UserAgreement />} />
+              <Route path="/gizlilik" element={<UserAgreement />} />
+              <Route path="/kvkk" element={<UserAgreement />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <CookieConsent />
